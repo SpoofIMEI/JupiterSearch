@@ -19,7 +19,6 @@ JupiterSearch is an easy -to-set up distributed text search database that is des
 **Todo (in chronological order from oldest to newest):**
 - [x] Custom tokenization
 - [x] HTTPS
-- [ ] Search result limits
 - [ ] Make repo public 
 - [ ] Be able to delete keys
 - [ ] Github wiki
