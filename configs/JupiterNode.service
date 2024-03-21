@@ -1,0 +1,6 @@
+[Unit]
+Description=JupiterSearch text search database node
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/bin/JupiterNode

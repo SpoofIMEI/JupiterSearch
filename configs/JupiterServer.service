@@ -1,0 +1,7 @@
+[Unit]
+Description=JupiterSearch text search database master node
+
+[Service]
+Restart=on-failure
+ExecStart=/usr/local/bin/JupiterServer --start --retry 
+
