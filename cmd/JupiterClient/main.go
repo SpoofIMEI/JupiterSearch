@@ -170,7 +170,7 @@ func shutdown() {
 	logrus.Info("server shutdown")
 }
 
-var uuidRegex, _ = regexp.Compile(`^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$`)
+var uuidRegex = regexp.MustCompile(`^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$`)
 
 func query() {
 	logrus.Info("doing a lookup on:", Query)
@@ -212,6 +212,11 @@ func query() {
 				err := json.Unmarshal([]byte(results.(string)), &chunkJSON)
 				if err != nil {
 					logrus.Error(err.Error())
+					continue
+				}
+
+				if chunkJSON["chunk"] == "" {
+					fmt.Println(results)
 					continue
 				}
 

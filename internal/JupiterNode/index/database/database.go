@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"time"
 
@@ -19,6 +20,8 @@ var (
 	ConcurrencyLock = make(chan any, 100)
 
 	ConcurrentlyRunning ConcurrentlyRunningStruct
+
+	uuidRegex = regexp.MustCompile(`^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$`)
 )
 
 type ConcurrentlyRunningStruct struct {
@@ -88,22 +91,64 @@ func Store(tokens map[string][]string, original map[string]any) (string, error) 
 
 func Retrieve(query string) (string, error) {
 	var results string
+	var doc string
 
-	query = strings.TrimSpace(query)
-
-	err := BadgerDB.View(func(txn *badger.Txn) error {
-		tempResults, err := txn.Get([]byte(query))
-		if err != nil {
-			return err
+	queries := strings.Split(strings.ToLower(strings.TrimSpace(query)), " ")
+	for _, query := range queries {
+		if uuidRegex.Match([]byte(query)) {
+			doc = query
+			break
 		}
+	}
 
-		tempResults.Value(func(byteResults []byte) error {
-			results = string(byteResults)
+	var err error
+	docMatches := make(map[string]int)
+
+	if doc != "" {
+		err = BadgerDB.View(func(txn *badger.Txn) error {
+			tempResults, err := txn.Get([]byte(query))
+			if err != nil {
+				return err
+			}
+
+			tempResults.Value(func(byteResults []byte) error {
+				results = string(byteResults)
+				return nil
+			})
+
 			return nil
 		})
+	} else {
+		for _, query := range queries {
+			err = BadgerDB.View(func(txn *badger.Txn) error {
+				tempResults, err := txn.Get([]byte(query))
+				if err != nil {
+					return err
+				}
 
-		return nil
-	})
+				tempResults.Value(func(byteResults []byte) error {
+					for _, docID := range strings.Split(string(byteResults), ":") {
+						docMatches[docID]++
+					}
+					return nil
+				})
+
+				return nil
+			})
+			if err != nil {
+				return "", err
+			}
+		}
+
+		var tempResults []string
+
+		for docID, matches := range docMatches {
+			if matches == len(queries) {
+				tempResults = append(tempResults, docID)
+			}
+		}
+		results = strings.Join(tempResults, ":")
+	}
 	return results, err
 }
 
