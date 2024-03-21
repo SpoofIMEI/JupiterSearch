@@ -1,5 +1,5 @@
 <img width=500 src="https://github.com/R00tendo/JupiterSearch/assets/72181445/df7259fc-862f-4c47-848a-b53edf473c31"></img>
-# JupiterSearch (version 1.0.0)
+# JupiterSearch (version 1.2.0)
 
 JupiterSearch is an easy -to-set up distributed text search database that is designed for searching for information or keywords like emails from huge amounts of unstructured data, for example, websites, documents, and emails.
 
@@ -17,11 +17,11 @@ JupiterSearch is an easy -to-set up distributed text search database that is des
 <br>
 
 **Todo (in chronological order from oldest to newest):**
-- [ ] Custom tokenization
-- [ ] Be able to delete keys
-- [ ] HTTPS
+- [x] Custom tokenization
+- [x] HTTPS
 - [ ] Search result limits
 - [ ] Make repo public 
+- [ ] Be able to delete keys
 - [ ] Github wiki
 
 # Understanding JupiterSearch
