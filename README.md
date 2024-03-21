@@ -78,13 +78,15 @@ sudo make install
 ```
 
 ### Config settings
-- `name`: The name that will show as the source for results when you query something
-- `datadir`: Path to where the database will be stored in
-- `api_listen`: What host the rest API will be binded to
-- `node_key`: A key that the master server will use to authenticate itself to the node
-- `max_concurrent_ingests`: Amount of concurrent store requests that are allowed
-- `client_key` <b>(IMPORTANT)</b>: This is essentially the password for the whole system. Clients authenticate using this.
-- `nodes` <b>(IMPORTANT)</b>: List of nodes separated by a space like this: `nodes=http://127.0.0.1:9192 http://127.0.0.1:9193`
+- *`name`: The name that will show as the source for results when you query something
+- *`datadir`: Path to where the database will be stored in
+- *`api_listen`: What host the rest API will be binded to
+- *`node_key`: A key that the master server will use to authenticate itself to the node
+- *`max_concurrent_ingests`: Amount of concurrent store requests that are allowed
+- *`client_key` <b>(IMPORTANT)</b>: This is essentially the password for the whole system. Clients authenticate using this.
+- *`nodes` <b>(IMPORTANT)</b>: List of nodes separated by a space like this: `nodes=http://127.0.0.1:9192 http://127.0.0.1:9193`
+- `tls_cert`: Location to a public certificate (for encrypted rest API traffic)
+- `tls_private`: Location to a private key (used with tls_cert)
 
 ### Configuring node(s)
 Open <b><i>/etc/JupiterSearh/JupiterNode.conf</i></b> with your favorite text editor on the machine you want to use as a node.
