@@ -2,6 +2,10 @@ FROM golang:latest
 
 WORKDIR /JupiterSearch
 
+RUN mkdir data
+
+RUN chmod -R 777 /JupiterSearch
+
 COPY . ./
 
 RUN go mod tidy 
