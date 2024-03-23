@@ -1,5 +1,5 @@
 <img width=500 src="https://github.com/R00tendo/JupiterSearch/assets/72181445/df7259fc-862f-4c47-848a-b53edf473c31"></img>
-# JupiterSearch (version 1.3.1)
+# JupiterSearch (version 1.3.3)
 
 JupiterSearch is an easy-to-setup distributed text search database that is designed for searching for unique information or keywords like serial numbers, email addresses, and domain names from huge amounts of unstructured data, for example, websites, documents, and emails.
 
@@ -20,6 +20,7 @@ JupiterSearch is an easy-to-setup distributed text search database that is desig
 - [x] Custom tokenization
 - [x] HTTPS
 - [x] Multiple queries
+- [X] Docker 
 - [ ] Make repo public 
 - [ ] Github wiki
 
@@ -46,6 +47,39 @@ Run `make install` as root to automatically download the dependencies, compile t
 
 ```sh
 sudo make install
+```
+
+<br>
+
+### Docker
+You can also run JupiterSearch with docker. To do so, begin by creating a network.
+```sh
+docker network create --subnet 172.18.0.0/16 JupiterSearch
+```
+By default, the IP range for this newly created network will be 172.18.0.0/16
+
+<br>
+
+Before building and running the images, configure the settings to your liking at configs/
+
+<br>
+
+Now build the image(s)
+```
+# JupiterNode:
+docker build -t jupiternode -f JupiterNode-Dockerfile .
+
+# JupiterServer:
+docker build -t jupiterserver -f JupiterServer-Dockerfile .
+```
+
+Run the image(s)
+```
+# JupiterServer:
+docker run --net JupiterSearch --ip 172.18.0.50 jupiterserver
+
+# JupiterNode:
+docker run --net JupiterSearch -p 9190:9190 --ip 172.18.0.51 jupiternode #Change 9190:9190 to the correct ports if you changed the defaults
 ```
 
 <br>
@@ -113,6 +147,7 @@ Add your nodes to the `nodes` variable, separated by a space character.
 By default, JupiterSearch extracts all the words and other information by running this regex against the data: `[\w+.+_+@]{4,}`.
 
 However, you can customize this by editing the regex found in <b><i>/etc/JupiterSearch/tokenization_regex</i></b>.
+
 
 # Usage
 There are two ways you can run JupiterNode and JupiterServer.
