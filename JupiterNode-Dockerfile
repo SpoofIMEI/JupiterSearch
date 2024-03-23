@@ -1,0 +1,14 @@
+FROM golang:latest
+
+WORKDIR /JupiterSearch
+
+COPY . ./
+
+RUN go mod tidy 
+RUN go build -o /usr/local/bin/JupiterNode ./cmd/JupiterNode/main.go
+RUN mkdir -p /etc/JupiterSearch
+RUN id -u JupiterNode >/dev/null 2>&1   || useradd JupiterNode
+RUN cp configs/JupiterNode.conf /etc/JupiterSearch/
+RUN cp configs/tokenization_regex /etc/JupiterSearch/
+
+ENTRYPOINT ["JupiterNode", "--start"]
