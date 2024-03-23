@@ -1,7 +1,7 @@
 <img width=500 src="https://github.com/R00tendo/JupiterSearch/assets/72181445/df7259fc-862f-4c47-848a-b53edf473c31"></img>
 # JupiterSearch (version 1.3.3)
 
-JupiterSearch is an easy-to-setup distributed text search database that is designed for searching for unique information or keywords like serial numbers, email addresses, and domain names from huge amounts of unstructured data, for example, websites, documents, and emails.
+JupiterSearch is an easy to set up distributed text search database that is designed for searching for unique information or keywords like serial numbers, email addresses, and domain names from huge amounts of unstructured data, for example, websites, documents, and emails.
 
 **What JupiterSearch offers you:**
 - Easy to set up
@@ -29,7 +29,7 @@ JupiterSearch is an easy-to-setup distributed text search database that is desig
 # Getting started
 ### Prerequisites
 - Go (preferably the latest version)
-- Linux -based system
+- Linux -based system or any other OS with Docker
 - At least 2GB of disk space
 
 <br>
@@ -60,7 +60,7 @@ By default, the IP range for this newly created network will be 172.18.0.0/16
 
 <br>
 
-Before building and running the images, configure the settings to your liking at configs/
+Before building and running the images, configure the settings to your liking at configs/ (do not edit data dir if you won't use -v)
 
 <br>
 
@@ -80,6 +80,11 @@ docker run --net JupiterSearch --ip 172.18.0.50 jupiterserver
 
 # JupiterNode:
 docker run --net JupiterSearch -p 9190:9190 --ip 172.18.0.51 jupiternode #Change 9190:9190 to the correct ports if you changed the defaults
+```
+
+If you want persistent storage, use the -v flag to mount a directory from your host system to the docker image's data directory.
+```
+docker run --net JupiterSearch -p 9190:9190 --ip 172.18.0.51 -v pathfromhostsystem:/JupiterSearch/data jupiternode 
 ```
 
 <br>
