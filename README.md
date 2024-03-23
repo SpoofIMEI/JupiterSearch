@@ -21,8 +21,9 @@ JupiterSearch is an easy to set up distributed text search database that is desi
 - [x] HTTPS
 - [x] Multiple queries
 - [X] Docker 
-- [ ] Make repo public 
-- [ ] Github wiki
+- [X] Make repo public 
+- [X] Github wiki
+- [ ] Client library for other languages
 
 <br>
 
