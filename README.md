@@ -1,4 +1,9 @@
 <img width=500 src="https://github.com/R00tendo/JupiterSearch/assets/72181445/df7259fc-862f-4c47-848a-b53edf473c31"></img>
+
+![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 # JupiterSearch (version 1.3.3)
 
 JupiterSearch is an easy to set up distributed text search database that is designed for searching for unique information or keywords like serial numbers, email addresses, and domain names from huge amounts of unstructured data, for example, websites, documents, and emails.
@@ -23,8 +28,8 @@ JupiterSearch is an easy to set up distributed text search database that is desi
 - [X] Docker 
 - [X] Make repo public 
 - [X] Github wiki
-- [ ] Client library for other languages
 
+New improvement ideas are welcome :)
 <br>
 
 # Getting started
@@ -200,6 +205,11 @@ JupiterClient --server http://127.0.0.1:9190 --key 3ms9dk2lfhs83bf9s20 --upload 
 ```
 
 <br>
+
+# Making your own client
+If you don't want to use JupiterClient or want to integrate JupiterSearch into your Golang projects, you may be interested in creating your own client. Fortunately, this is very easy with the help of the JupiterSearch client library.
+
+Read more here: <a href="https://github.com/R00tendo/JupiterSearch/wiki/Client-library-usage"> https://github.com/R00tendo/JupiterSearch/wiki/Client-library-usage</a>
 
 # Understanding JupiterSearch
 ### JupiterSearch parts
