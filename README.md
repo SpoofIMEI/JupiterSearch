@@ -1,4 +1,4 @@
-<img width=500 src="https://github.com/R00tendo/JupiterSearch/assets/72181445/df7259fc-862f-4c47-848a-b53edf473c31"></img>
+<img width=500 src="https://github.com/SpoofIMEI/JupiterSearch/assets/72181445/df7259fc-862f-4c47-848a-b53edf473c31"></img>
 
 ![Maintained](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
@@ -44,7 +44,7 @@ New improvement ideas are welcome :)
 Download JupiterSearch either by using `git clone` or by downloading and unpacking the zip file on this page.
 
 ```sh
-git clone https://github.com/R00tendo/JupiterSearch
+git clone https://github.com/SpoofIMEI/JupiterSearch
 ```
 
 <br>
@@ -209,7 +209,7 @@ JupiterClient --server http://127.0.0.1:9190 --key 3ms9dk2lfhs83bf9s20 --upload 
 # Making your own client
 If you don't want to use JupiterClient or want to integrate JupiterSearch into your Golang projects, you may be interested in creating your own client. Fortunately, this is very easy with the help of the JupiterSearch client library.
 
-Read more here: <a href="https://github.com/R00tendo/JupiterSearch/wiki/Client-library-usage"> https://github.com/R00tendo/JupiterSearch/wiki/Client-library-usage</a>
+Read more here: <a href="https://github.com/SpoofIMEI/JupiterSearch/wiki/Client-library-usage"> https://github.com/SpoofIMEI/JupiterSearch/wiki/Client-library-usage</a>
 
 # Understanding JupiterSearch
 ### JupiterSearch parts
@@ -228,7 +228,7 @@ The master server is the service clients interact with. It keeps track of all th
 Node is the service that actually has the data and can query it. It receives commands/requests from the master server and responds to them appropriately.
 
 
-<img width=700 src="https://github.com/R00tendo/JupiterSearch/assets/72181445/04f567f8-b517-49cd-99db-f19fb3bc54ce"></img>
+<img width=700 src="https://github.com/SpoofIMEI/JupiterSearch/assets/72181445/04f567f8-b517-49cd-99db-f19fb3bc54ce"></img>
 
 <br>
 
