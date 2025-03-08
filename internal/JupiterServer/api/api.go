@@ -10,10 +10,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/R00tendo/JupiterSearch/internal/JupiterServer/index"
-	"github.com/R00tendo/JupiterSearch/internal/JupiterServer/nodemaster"
-	"github.com/R00tendo/JupiterSearch/internal/universal/information"
-	"github.com/R00tendo/JupiterSearch/internal/universal/jhttp"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterServer/index"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterServer/nodemaster"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/information"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/jhttp"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"

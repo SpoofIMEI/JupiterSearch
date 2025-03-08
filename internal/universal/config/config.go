@@ -5,7 +5,7 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/R00tendo/JupiterSearch/internal/JupiterNode/index/tokenizer"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterNode/index/tokenizer"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 )

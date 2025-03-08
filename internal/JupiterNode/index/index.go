@@ -4,8 +4,8 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/R00tendo/JupiterSearch/internal/JupiterNode/index/database"
-	"github.com/R00tendo/JupiterSearch/internal/JupiterNode/index/tokenizer"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterNode/index/database"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterNode/index/tokenizer"
 
 	"github.com/sirupsen/logrus"
 )

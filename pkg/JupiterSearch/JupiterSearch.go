@@ -1,7 +1,7 @@
 package jupitersearch
 
 import (
-	"github.com/R00tendo/JupiterSearch/pkg/JupiterSearch/client"
+	"github.com/SpoofIMEI/JupiterSearch/pkg/JupiterSearch/client"
 )
 
 func NewClient(server string, key string) (*client.Client, error) {

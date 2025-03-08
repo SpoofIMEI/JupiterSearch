@@ -4,10 +4,10 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/R00tendo/JupiterSearch/internal/JupiterNode/api"
-	"github.com/R00tendo/JupiterSearch/internal/JupiterNode/index/database"
-	"github.com/R00tendo/JupiterSearch/internal/universal/config"
-	"github.com/R00tendo/JupiterSearch/internal/universal/information"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterNode/api"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterNode/index/database"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/config"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/information"
 
 	"flag"
 	"os"

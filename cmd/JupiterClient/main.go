@@ -9,9 +9,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/R00tendo/JupiterSearch/internal/universal/filesystem"
-	"github.com/R00tendo/JupiterSearch/internal/universal/information"
-	"github.com/R00tendo/JupiterSearch/pkg/JupiterSearch/client"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/filesystem"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/information"
+	"github.com/SpoofIMEI/JupiterSearch/pkg/JupiterSearch/client"
 
 	"github.com/sirupsen/logrus"
 	easy "github.com/t-tomalak/logrus-easy-formatter"

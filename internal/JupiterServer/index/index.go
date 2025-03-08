@@ -4,8 +4,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/R00tendo/JupiterSearch/internal/JupiterServer/nodemaster"
-	"github.com/R00tendo/JupiterSearch/internal/universal/jhttp"
+	"github.com/SpoofIMEI/JupiterSearch/internal/JupiterServer/nodemaster"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/jhttp"
 )
 
 func Index(data map[string]any) (string, error) {

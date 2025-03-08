@@ -1,9 +1,10 @@
 package client
 
 import (
-	"github.com/R00tendo/JupiterSearch/pkg/JupiterSearch/client/httpcli"
 	"errors"
 	"net/url"
+
+	"github.com/SpoofIMEI/JupiterSearch/pkg/JupiterSearch/client/httpcli"
 )
 
 type Client struct {

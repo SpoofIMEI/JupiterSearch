@@ -6,8 +6,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/R00tendo/JupiterSearch/internal/universal/jhttp"
-	"github.com/R00tendo/JupiterSearch/internal/universal/keys"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/jhttp"
+	"github.com/SpoofIMEI/JupiterSearch/internal/universal/keys"
 
 	"github.com/google/uuid"
 	"github.com/sirupsen/logrus"

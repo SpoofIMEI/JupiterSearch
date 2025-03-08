@@ -1,4 +1,4 @@
-module github.com/R00tendo/JupiterSearch
+module github.com/SpoofIMEI/JupiterSearch
 
 go 1.20
 
